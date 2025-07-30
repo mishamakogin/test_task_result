@@ -27,6 +27,7 @@ RSpec.describe Posting, type: :model do
       expect(posting.type).to eq('Article')
       expect(posting.body).to eq(posting_body)
     end
+    
     it 'should return image attributes from body' do
       expect(posting.article_with_image).to eq(response)
     end

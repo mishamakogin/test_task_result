@@ -22,3 +22,10 @@ The code includes a unit test, which passes. What is wrong with this unit test? 
 
 ### Instructions
 Fork this repository. You can either add comments to the existing code explaining what is wrong and/or what you would change and why. Or you can rewrite the feature, highlighting in the comments what was problematic with the original implementation and providing justification for your decisions. Please put a link to your public repository into the answer section of the question.
+
+
+### Response
+1. Does the implementation achieve the desired effect? - Yes, but only in case when we have "figure" and "img" tags inside body.
+2. What are the shortcomings of this implementation? - Sometime the "article_with_image" method return hash but sometimes strings, so here is the problem. We not expect a string in the view.
+3. Does the code adhere to best practices? - I would say no.
+4. How might you implement this differently? - First of all I would start from the unit test. It's a good practice to write it before the implementation. So using TDD here we would prevent exeptions in case of unexpected type. I mean in view we expect hash but sometimes getting string. I would add more cases into it. For example is case if the "figure" tag is missing or the "img" tag is missing. Also we should handle cases when a method returns a sting.
